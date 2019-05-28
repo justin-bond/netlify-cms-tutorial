@@ -1,6 +1,6 @@
 backend:
-  name: github
-  repo: geekster909/netlify-cms-tutorial
+  name: git-gateway
+  branch: master
 
 media_folder: static/assets
 public_folder: assets
