@@ -15,18 +15,20 @@ collections:
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
       - { name: body, label: Body, widget: markdown }
+
   - name: projects
     label: Projects
     folder: markdown/projects
     create: true
     slug: "{{slug}}"
-    identifier_field: "projectname"
+    identifier_field: "projectName"
     fields:
-      - {label: "Project Name", name: "projectname", widget: "string"}
+      - {label: "Project Name", name: "projectName", widget: "string"}
       - {label: "Project Key", name: "projectKey", widget: "hidden", default: "project-post"}
-      - {label: "Agency", name: "agaency", widget: "string"}
-      - {label: "Logo", name: "logo", widget: image}
-      - {label: "Screenshot", name: "Screenshot", widget: image}
-      - {label: "Vimeo ID", name: "vimeoid", widget: "string"}
-      - {label: "Website Link", name: "websitelink", widget: "string"}
+      - {label: "Project Options", name: "projectOptions", widget: "select", default: "hidden", options: [{label: 'Hidden', value: 'hidden'}, {label: 'Recent Work', value: 'recentWork'}, {label: 'Other Work', value: 'otherWork'}]}
+      - {label: "Agency", name: "agaency", widget: "string", required: false}
+      - {label: "Logo", name: "logo", widget: image, required: false}
+      - {label: "Screenshot", name: "screenshot", widget: image}
+      - {label: "Vimeo ID", name: "vimeoId", widget: "string", required: false}
+      - {label: "Website Link", name: "websiteLink", widget: "string", required: false}
       - {label: Skills, name: skills, widget: list, fields: [{label: Skill, name: skill, widget: string}]}

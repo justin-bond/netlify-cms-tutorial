@@ -1,11 +1,12 @@
 ---
-projectname: test project
+projectName: test project
 projectKey: project-post
+projectOptions: hidden
 agaency: envoy
 logo: /assets/fb-share.png
-Screenshot: /assets/fb-share.png
-vimeoid: '995765824'
-websitelink: tvp.vizio.com
+screenshot: /assets/fb-share.png
+vimeoId: '995765824'
+websiteLink: tvp.vizio.com
 skills:
   - skill: mad skilllllsssss
   - skill: mad skilllllzzzz
