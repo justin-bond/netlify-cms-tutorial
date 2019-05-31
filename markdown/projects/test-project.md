@@ -1,6 +1,6 @@
 ---
-projectName: test project
-projectKey: project-post
+title: test project
+templateKey: projectTemplate
 projectOptions: hidden
 agaency: envoy
 logo: /assets/fb-share.png

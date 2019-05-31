@@ -6,25 +6,14 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
-  - name: blog
-    label: Blog
-    folder: blog
-    create: true
-    fields:
-      - { name: path, label: Path }
-      - { name: date, label: Date, widget: date }
-      - { name: title, label: Title }
-      - { name: body, label: Body, widget: markdown }
-
   - name: projects
     label: Projects
     folder: markdown/projects
     create: true
     slug: "{{slug}}"
-    identifier_field: "projectName"
     fields:
-      - {label: "Project Name", name: "projectName", widget: "string"}
-      - {label: "Project Key", name: "projectKey", widget: "hidden", default: "project-post"}
+      - {label: "Project Name", name: "title", widget: "string"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "projectTemplate"}
       - {label: "Project Options", name: "projectOptions", widget: "select", default: "hidden", options: [{label: 'Hidden', value: 'hidden'}, {label: 'Recent Work', value: 'recentWork'}, {label: 'Other Work', value: 'otherWork'}]}
       - {label: "Agency", name: "agaency", widget: "string", required: false}
       - {label: "Logo", name: "logo", widget: image, required: false}
