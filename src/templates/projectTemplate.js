@@ -1,5 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import Helmet from 'react-helmet';
+import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
 const projectTemplate = ({ data }) => {
@@ -7,6 +8,7 @@ const projectTemplate = ({ data }) => {
 
   return (
     <div className="blog-post-container">
+      <Helmet title={ `${frontmatter.title} | Test Site` } />
       <div className="blog-post">
         { frontmatter.title }
         { frontmatter.vimeoId }
