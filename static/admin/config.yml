@@ -21,3 +21,12 @@ collections:
       - {label: "Agency", name: "agaency", widget: "string", required: false}
       - {label: "Website Link", name: "websiteLink", widget: "string", required: false}
       - {label: Skills, name: skills, widget: list, fields: [{label: Skill, name: skill, widget: string}]}
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "markdown/pages/index.md"
+        label: "Home Page"
+        name: "index"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "indexTemplate"}
+          - {label: Title, name: title, widget: string}
