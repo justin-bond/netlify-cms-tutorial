@@ -8,7 +8,7 @@ public_folder: assets
 collections:
   - name: projects
     label: Projects
-    folder: markdown/projects
+    folder: markdown/project
     create: true
     slug: "{{slug}}"
     fields:
