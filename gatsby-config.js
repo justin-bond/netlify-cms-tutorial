@@ -8,9 +8,9 @@ module.exports = {
   /* Your site config here */
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-netlify-cms`,
-    },
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -18,6 +18,11 @@ module.exports = {
         name: 'markdown',
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-plugin-transition-link`,
+      options: {
+        layout: require.resolve(`./src/components/layout.js`)
+      }
+    }
   ],
 }
