@@ -1,18 +1,28 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import { graphql } from 'gatsby';
 
-export default function Template({
-  data,
-}) {
-  const { markdownRemark } = data;
-  const { frontmatter } = markdownRemark;
+const projectTemplate = ({ data }) => {
+  const { frontmatter } = data.markdownRemark;
+
   return (
     <div className="blog-post-container">
       <div className="blog-post">
         { frontmatter.title }
+        { frontmatter.vimeoId }
       </div>
     </div>
   );
+}
+
+projectTemplate.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.shape({
+         title: PropTypes.string
+      }),
+    }),
+  }),
 }
 
 export const pageQuery = graphql`
@@ -24,3 +34,5 @@ export const pageQuery = graphql`
     }
   }
 `;
+
+export default projectTemplate;
