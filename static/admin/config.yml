@@ -8,7 +8,7 @@ public_folder: assets
 collections:
   - name: projects
     label: Projects
-    folder: markdown/project
+    folder: src/pages/project
     create: true
     slug: "{{slug}}"
     fields:
@@ -24,7 +24,7 @@ collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "markdown/pages/index.md"
+      - file: "src/pages/index.md"
         label: "Home Page"
         name: "index"
         fields:
