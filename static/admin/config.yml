@@ -6,6 +6,31 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
+  - name: 'settings'
+    label: 'Settings'
+    delete: false # Prevent users from deleting documents in this collection
+    editor:
+      preview: false
+    files:
+      - name: 'general'
+        label: 'Site Settings'
+        file: 'src/pages/settings/header.md'
+        description: 'General Site Settings'
+        fields:
+          - { label: 'Global title', name: 'site_title', widget: 'string' }
+          - label: 'Post Settings'
+            name: posts
+            widget: 'object'
+            fields:
+              - {
+                  label: 'Number of posts on frontpage',
+                  name: front_limit,
+                  widget: number,
+                  min: 1,
+                  max: 10,
+                }
+              - { label: 'Default Author', name: author, widget: string }
+              - { label: 'Default Thumbnail', name: thumb, widget: image, class: 'thumb', required: false }
   - name: projects
     label: Projects
     folder: src/pages/project
@@ -27,6 +52,12 @@ collections:
       - file: "src/pages/index.md"
         label: "Home Page"
         name: "index"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "indexTemplate"}
+          - {label: Title, name: title, widget: string}
+      - file: "src/pages/index2.md"
+        label: "Home Page2"
+        name: "index2"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "indexTemplate"}
           - {label: Title, name: title, widget: string}
